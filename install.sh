@@ -1,12 +1,9 @@
 path=$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd) 
 folder=$(echo $path | awk -F/ '{print $NF}')
 
-sudo apt update
-sudo apt install build-essential clang cmake pkg-config libssl-dev -y
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source /root/.cargo/env
-sudo apt update
-cd /root/
-git clone https://github.com/soundnesslabs/soundness-layer.git
-cd soundness-layer/soundness-cli
-cargo install --path .
+curl -sSL https://raw.githubusercontent.com/soundnesslabs/soundness-layer/main/soundnessup/install | bash
+source ~/.bashrc
+cd /root/.soundness/bin
+./soundnessup install
+./soundness-cli -V
+#./soundnessup update
