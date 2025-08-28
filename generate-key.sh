@@ -4,5 +4,5 @@ folder=$(echo $path | awk -F/ '{print $NF}')
 read -p "Name (my-key)? " key
 [ -z $key ] && key="my-key"
 
-cd /root/soundness-layer/soundness-cli
-soundness-cli generate-key --name $key
+cd /root/.soundness/bin
+./soundness-cli generate-key --name $key
