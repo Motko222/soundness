@@ -8,4 +8,5 @@ echo "Password: "$PASS
 echo "-------------------------------------------------"
 cd /root/.soundness/bin
 echo $c2 >cmd
+chmod +x cmd
 ./cmd
